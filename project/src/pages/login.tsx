@@ -1,6 +1,4 @@
 import { useState, type FormEvent } from 'react';
-import brandBox from '../assets/login/brand-box.png';
-import chefHat from '../assets/login/brand-chef-hat.png';
 import envelope from '../assets/login/envelope.png';
 import facebookLogo from '../assets/login/facebook.svg';
 import googlePart1 from '../assets/login/google-part-1.svg';
@@ -9,6 +7,7 @@ import googlePart3 from '../assets/login/google-part-3.svg';
 import googlePart4 from '../assets/login/google-part-4.svg';
 import eyeOff from '../assets/login/eye-off.png';
 import lock from '../assets/login/lock.png';
+import SiteHeader from './SiteHeader';
 import './login.css';
 
 const googleLogoParts = [googlePart1, googlePart2, googlePart3, googlePart4];
@@ -29,42 +28,7 @@ function Login() {
     <main className="login-page">
       <div aria-hidden="true" className="login-background" />
 
-      <header className="site-header">
-        <a aria-label="DAPO, beranda" className="brand" href="/">
-          <span aria-hidden="true" className="brand__mark">
-            <img className="brand__box" src={brandBox} />
-            <img className="brand__hat" src={chefHat} />
-          </span>
-          <span className="brand__name">DAPO</span>
-        </a>
-
-        <nav aria-label="Navigasi utama" className="site-nav">
-          <a className="site-nav__link site-nav__link--active" href="/">
-            Beranda
-          </a>
-          <a className="site-nav__link" href="#food-kits">
-            Food Kits
-          </a>
-          <a className="site-nav__link" href="#kategori">
-            Kategori
-          </a>
-          <a className="site-nav__link" href="#tentang-kami">
-            Tentang Kami
-          </a>
-        </nav>
-
-        <div className="header-actions">
-          <a aria-label="Keranjang belanja" className="basket-link" href="#keranjang">
-            <svg aria-hidden="true" viewBox="0 0 48 56">
-              <path d="M8 21h32l-3.1 26H11.1L8 21Z" fill="currentColor" />
-              <path d="m15 21 9-12 9 12M16 28v12m8-12v12m8-12v12" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
-            </svg>
-          </a>
-          <a className="header-login" href="#login">
-            Masuk
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section aria-labelledby="login-title" className="login-card" id="login">
         <h1 className="login-title" id="login-title">
@@ -155,7 +119,7 @@ function Login() {
           </p>
 
           <p className="signup-prompt">
-            Belum Punya Akun? <a href="#sign-up">Sign Up</a>
+            Belum Punya Akun? <a href="/signup">Sign Up</a>
           </p>
         </form>
       </section>
