@@ -22,7 +22,7 @@ function ResetPassword() {
       return;
     }
 
-    setMessage('Pembaruan kata sandi belum terhubung ke layanan akun.');
+    window.location.href = '/reset-success';
   };
 
   return (
