@@ -86,7 +86,7 @@ function Login() {
               />
               <span>Ingatkan Saya</span>
             </label>
-            <a className="forgot-password" href="#lupa-kata-sandi">
+            <a className="forgot-password" href="/reset-password">
               Lupa Kata Sandi?
             </a>
           </div>
