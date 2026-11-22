@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+} /* TO RESET */
+
+.container {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+} /* CENTER CONTENT */
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+} /* CARD STYLING */
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #333;
+    text-align: left;
+} /* CARD TITLE */
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+} /* INPUT GROUP */
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+} /* LABEL STYLING */
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+} /* INPUT STYLING */
+
+/* BUTTON STYLING */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #ff7e5f;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+} /* BUTTON STYLING */
+
+button:hover {
+    background: #feb47b;
+} /* BUTTON HOVER EFFECT */
+
+/* ==ADMIN CONTAINER== */
+.admin-container {
+    margin-top: 20px;
+    display: flex;
+} /* ADMIN CONTAINER */
+
+
+/* ==SIDEBAR STYLING== */
+.sidebar {
+    width: 200px;
+    background: #f4f4f4;
+    padding: 15px;
+    color: #333;
+} /* SIDEBAR STYLING */
+
+.sidebar h3 {
+    margin-bottom: 10px;
+} /* SIDEBAR TITLE */
+
+.sidebar ul {
+    list-style: none;
+} /* SIDEBAR LIST */
+
+.sidebar ul li {
+    margin-bottom: 10px;
+} /* SIDEBAR LIST ITEMS */
+
+/* ==CONTENT STYLING== */
+.content {
+    flex: 1;
+    padding: 15px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+} /* CONTENT STYLING */
+
+/* ==LOGOUT BUTTON== */
+.logout-button {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ff4b5c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+} /* LOGOUT BUTTON STYLING */
+
