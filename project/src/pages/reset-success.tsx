@@ -32,7 +32,7 @@ function ResetSuccess() {
           Sekarang Anda dapat kembali ke akun DAPO Anda
         </p>
 
-        <a className="reset-success-submit" href="/">
+        <a className="reset-success-submit" href="/dashboard">
           Masuk Sekarang <span aria-hidden="true">&gt;</span>
         </a>
       </section>
