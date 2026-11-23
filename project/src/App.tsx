@@ -5,6 +5,7 @@ import ResetPassword from './pages/reset-password';
 import Signup from './pages/signup';
 import Membership from './pages/membership';
 import AboutUs from './pages/about-us';
+import Categories from './pages/categories';
 
 function App() {
   const route = window.location.pathname.replace(/\/+$/, '');
@@ -31,6 +32,10 @@ function App() {
 
   if (route === '/about-us') {
     return <AboutUs />;
+  }
+
+  if (route === '/categories') {
+    return <Categories />;
   }
 
   return <Login />;

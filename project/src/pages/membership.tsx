@@ -52,7 +52,7 @@ function Membership() {
         <nav className="membership-nav" aria-label="Navigasi utama">
           <a href="/dashboard">Beranda</a>
           <a href="/dashboard#food-kits">Food Kits</a>
-          <a href="/dashboard#kategori">Kategori</a>
+          <a href="/categories">Kategori</a>
           <a href="/about-us">Tentang Kami</a>
         </nav>
 
