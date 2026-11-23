@@ -9,6 +9,7 @@ import Categories from './pages/categories';
 import FoodKits from './pages/food-kits';
 import PracticalMenu from './pages/practical-menu';
 import HealthyMenu from './pages/healthy-menu';
+import FamilyMenu from './pages/family-menu';
 
 function App() {
   const route = window.location.pathname.replace(/\/+$/, '');
@@ -51,6 +52,10 @@ function App() {
 
   if (route === '/healthy-menu') {
     return <HealthyMenu />;
+  }
+
+  if (route === '/family-menu') {
+    return <FamilyMenu />;
   }
 
   return <Login />;

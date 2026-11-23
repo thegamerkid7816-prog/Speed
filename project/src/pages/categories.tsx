@@ -81,7 +81,9 @@ function Categories() {
                     ? '/practical-menu'
                     : category.title === 'Menu Sehat'
                       ? '/healthy-menu'
-                      : '/food-kits'
+                      : category.title === 'Menu Keluarga'
+                        ? '/family-menu'
+                        : '/food-kits'
                 }>Lihat Menu</a>
               </div>
             </article>
