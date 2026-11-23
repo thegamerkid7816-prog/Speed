@@ -5,6 +5,10 @@ import './login.css';
 import './reset-success.css';
 
 function ResetSuccess() {
+  const handleLogin = () => {
+    localStorage.setItem('isLoggedIn', 'true');
+  };
+
   return (
     <main className="login-page reset-success-page">
       <div aria-hidden="true" className="login-background" />
@@ -32,7 +36,7 @@ function ResetSuccess() {
           Sekarang Anda dapat kembali ke akun DAPO Anda
         </p>
 
-        <a className="reset-success-submit" href="/dashboard">
+        <a className="reset-success-submit" href="/dashboard" onClick={handleLogin}>
           Masuk Sekarang <span aria-hidden="true">&gt;</span>
         </a>
       </section>

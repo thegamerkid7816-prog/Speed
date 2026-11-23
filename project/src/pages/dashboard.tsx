@@ -1,7 +1,13 @@
-import hero from '../assets/dashboard/hero.png';
-import stepOne from '../assets/dashboard/step-1.png';
-import stepTwo from '../assets/dashboard/step-2.png';
-import stepThree from '../assets/dashboard/step-3.png';
+import publicHero from '../assets/dashboard/hero.png';
+import publicStepOne from '../assets/dashboard/step-1.png';
+import publicStepTwo from '../assets/dashboard/step-2.png';
+import publicStepThree from '../assets/dashboard/step-3.png';
+import loggedInHero from '../assets/dashboard/logged-in-hero.png';
+import loggedInStepOne from '../assets/dashboard/logged-in-step-1.png';
+import loggedInStepTwo from '../assets/dashboard/logged-in-step-2.png';
+import loggedInStepThree from '../assets/dashboard/logged-in-step-3.png';
+import avatar from '../assets/dashboard/avatar.png';
+import basket from '../assets/dashboard/logged-in-basket.png';
 import brandBox from '../assets/dashboard/brand-box.png';
 import brandHat from '../assets/dashboard/brand-hat.png';
 import asset01 from '../assets/dashboard/asset-01.png';
@@ -20,7 +26,16 @@ const menuCards = [
   { title: 'Menu Mahasiswa', description: '', image: asset04, className: 'menu-card--student' },
 ];
 
-function Dashboard() {
+type DashboardProps = {
+  isLoggedIn?: boolean;
+};
+
+function Dashboard({ isLoggedIn = false }: DashboardProps) {
+  const hero = isLoggedIn ? loggedInHero : publicHero;
+  const stepOne = isLoggedIn ? loggedInStepOne : publicStepOne;
+  const stepTwo = isLoggedIn ? loggedInStepTwo : publicStepTwo;
+  const stepThree = isLoggedIn ? loggedInStepThree : publicStepThree;
+
   return (
     <main className="dashboard-page">
       <header className="dashboard-header">
@@ -39,7 +54,18 @@ function Dashboard() {
           <a className="dashboard-nav__link" href="#tentang-kami">Tentang Kami</a>
         </nav>
 
-        <a className="dashboard-login" href="/">Masuk</a>
+        {isLoggedIn ? (
+          <div className="dashboard-auth-actions">
+            <a className="dashboard-basket" href="#keranjang" aria-label="Keranjang belanja">
+              <img src={basket} alt="" />
+            </a>
+            <button className="dashboard-avatar" type="button" aria-label="Profil pengguna">
+              <img src={avatar} alt="" />
+            </button>
+          </div>
+        ) : (
+          <a className="dashboard-login" href="/">Masuk</a>
+        )}
       </header>
 
       <section className="dashboard-hero">

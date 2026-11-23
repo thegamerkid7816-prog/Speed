@@ -83,6 +83,44 @@
   text-decoration: none;
 }
 
+.dashboard-auth-actions {
+  display: flex;
+  height: 98px;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.dashboard-basket {
+  display: grid;
+  width: 48px;
+  height: 56px;
+  place-items: center;
+}
+
+.dashboard-basket img {
+  width: 48px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.dashboard-avatar {
+  width: 98px;
+  height: 98px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.dashboard-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .dashboard-hero {
   position: relative;
   height: 532px;
@@ -566,6 +604,10 @@
   .dashboard-brand__name { font-size: 28px; }
   .dashboard-nav { display: none; }
   .dashboard-login { width: 94px; height: 44px; margin-left: auto; font-size: 17px; }
+  .dashboard-auth-actions { height: 58px; gap: 12px; margin-left: auto; }
+  .dashboard-basket { width: 38px; height: 44px; }
+  .dashboard-basket img { width: 38px; height: 44px; }
+  .dashboard-avatar { width: 58px; height: 58px; }
 
   .dashboard-hero { height: 560px; }
   .dashboard-hero__image { top: 0; width: 100%; height: 100%; object-position: 65% center; }

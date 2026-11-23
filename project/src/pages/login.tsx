@@ -17,11 +17,11 @@ function Login() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-  const [message, setMessage] = useState('');
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setMessage('Login belum terhubung ke layanan autentikasi.');
+    localStorage.setItem('isLoggedIn', 'true');
+    window.location.href = '/dashboard';
   };
 
   return (
@@ -113,10 +113,6 @@ function Login() {
               <span>Masuk dengan Facebook</span>
             </button>
           </div>
-
-          <p aria-live="polite" className="login-message">
-            {message}
-          </p>
 
           <p className="signup-prompt">
             Belum Punya Akun? <a href="/signup">Sign Up</a>

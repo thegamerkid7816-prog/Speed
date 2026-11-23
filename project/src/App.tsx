@@ -20,7 +20,7 @@ function App() {
   }
 
   if (route === '/dashboard') {
-    return <Dashboard />;
+    return <Dashboard isLoggedIn={localStorage.getItem('isLoggedIn') === 'true'} />;
   }
 
   return <Login />;
