@@ -51,7 +51,7 @@ function Dashboard({ isLoggedIn = false }: DashboardProps) {
           <a className="dashboard-nav__link dashboard-nav__link--active" href="/dashboard">Beranda</a>
           <a className="dashboard-nav__link" href="#food-kits">Food Kits</a>
           <a className="dashboard-nav__link" href="#kategori">Kategori</a>
-          <a className="dashboard-nav__link" href="#tentang-kami">Tentang Kami</a>
+          <a className="dashboard-nav__link" href="/about-us">Tentang Kami</a>
         </nav>
 
         {isLoggedIn ? (

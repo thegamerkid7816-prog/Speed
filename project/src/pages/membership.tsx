@@ -53,7 +53,7 @@ function Membership() {
           <a href="/dashboard">Beranda</a>
           <a href="/dashboard#food-kits">Food Kits</a>
           <a href="/dashboard#kategori">Kategori</a>
-          <a href="/dashboard#tentang-kami">Tentang Kami</a>
+          <a href="/about-us">Tentang Kami</a>
         </nav>
 
         <button className="membership-avatar" type="button" aria-label="Profil pengguna">
