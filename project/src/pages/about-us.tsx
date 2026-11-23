@@ -61,7 +61,7 @@ function AboutUs() {
 
         <nav className="about-nav" aria-label="Navigasi utama">
           <a href="/dashboard">Beranda</a>
-          <a href="/dashboard#food-kits">Food Kits</a>
+          <a href="/food-kits">Food Kits</a>
           <a href="/categories">Kategori</a>
           <a className="about-nav__active" href="/about-us">Tentang Kami</a>
         </nav>

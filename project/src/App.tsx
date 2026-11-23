@@ -6,6 +6,7 @@ import Signup from './pages/signup';
 import Membership from './pages/membership';
 import AboutUs from './pages/about-us';
 import Categories from './pages/categories';
+import FoodKits from './pages/food-kits';
 
 function App() {
   const route = window.location.pathname.replace(/\/+$/, '');
@@ -36,6 +37,10 @@ function App() {
 
   if (route === '/categories') {
     return <Categories />;
+  }
+
+  if (route === '/food-kits') {
+    return <FoodKits />;
   }
 
   return <Login />;

@@ -49,7 +49,7 @@ function Dashboard({ isLoggedIn = false }: DashboardProps) {
 
         <nav className="dashboard-nav" aria-label="Navigasi utama">
           <a className="dashboard-nav__link dashboard-nav__link--active" href="/dashboard">Beranda</a>
-          <a className="dashboard-nav__link" href="#food-kits">Food Kits</a>
+          <a className="dashboard-nav__link" href="/food-kits">Food Kits</a>
           <a className="dashboard-nav__link" href="/categories">Kategori</a>
           <a className="dashboard-nav__link" href="/about-us">Tentang Kami</a>
         </nav>
