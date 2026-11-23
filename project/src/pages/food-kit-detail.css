@@ -355,8 +355,20 @@
 
 .detail-ingredients div {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 11px;
+}
+
+.detail-ingredients div span::before {
+  display: inline-grid;
+  width: 10px;
+  height: 10px;
+  margin-right: 7px;
+  border: 1px solid #727975;
+  border-radius: 2px;
+  content: "";
+  vertical-align: -1px;
 }
 
 .detail-ingredients strong { color: #727975; }

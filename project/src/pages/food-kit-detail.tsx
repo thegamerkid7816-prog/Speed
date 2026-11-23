@@ -26,36 +26,40 @@ const productCatalog = [
 
 const cookingSteps = [
   {
-    title: 'Siapkan Ayam',
-    text: 'Cuci bersih ayam kampung dan tiriskan. Lumuri daging dengan jeruk nipis, diamkan 10-15 menit, lalu bilas kembali dengan air.',
+    title: 'Siapkan Daging',
+    text: 'Keluarkan daging sapi dari kemasan, cuci bersih, lalu tiriskan. Potong daging sapi dengan ukuran seukuran gigitan.',
   },
   {
-    title: 'Tumis Bumbu Base Taliwang',
-    text: 'Panaskan 3 sdm minyak di atas api sedang. Masukkan bumbu base Taliwang, tumis hingga harum, lalu masukkan ayah di rendam.',
+    title: 'Haluskan Bumbu',
+    text: 'Masukkan bawang merah, bawang putih, cabai merah, kemiri, jahe, lengkuas, dan bumbu instan ke dalam blender, lalu haluskan hingga berbentuk pasta.',
   },
   {
-    title: 'Masak Ayam hingga Bumbu Meresap',
-    text: 'Masukkan ayam ke dalam wajan dengan bumbu. Tumis hingga 25-35 menit sampai bumbu meresap dan ayam matang.',
+    title: 'Tumis Bumbu',
+    text: 'Panaskan 3 sdm minyak dalam 5 menit, kemudian tumis bumbu halus hingga harum. Tambahkan daun jeruk, daun salam, dan serai.',
   },
   {
-    title: 'Panggang Ayam',
-    text: 'Angkat ayam, lalu panggang di atas alat pemanggang atau wajan. Olesi ayam dengan bumbu setiap 5-10 menit hingga berwarna kecokelatan dan bagian luar renyah.',
+    title: 'Masak Daging',
+    text: 'Masukkan potongan daging sapi, aduk rata, lalu tuang santan kelapa. Masak 60-90 menit sambil sesekali mengaduk hingga bumbu meresap.',
+  },
+  {
+    title: 'Masak hingga Rendang Matang',
+    text: 'Masak dengan api kecil sambil diaduk hingga kuah mengering dan minyak keluar. Sajikan dengan tambahan kelapa sangrai.',
   },
 ];
 
 const ingredients = [
-  { name: '1 ekor Ayam Kampung', amount: '≈800g' },
-  { name: 'Bumbu Base Taliwang', amount: '1 Pak' },
+  { name: 'Daging Sapi', amount: '≈500g' },
+  { name: 'Bumbu Rendang DAPO', amount: '1 Pak' },
   { name: 'Daun Jeruk', amount: '4 Lbr' },
   { name: 'Serai, Memarkan', amount: '2 Batang' },
-  { name: 'Jeruk Nipis', amount: '1 Buah' },
+  { name: 'Kelapa Sangrai', amount: '100g' },
 ];
 
 function FoodKitDetail() {
-  const [quantity, setQuantity] = useState(2);
+  const [quantity, setQuantity] = useState(0);
   const pathParts = window.location.pathname.split('/').filter(Boolean);
   const slug = pathParts[pathParts.length - 1];
-  const product = productCatalog.find((item) => item.slug === slug) ?? productCatalog[4];
+  const product = productCatalog.find((item) => item.slug === slug) ?? productCatalog[0];
   const unitPrice = Number(product.price.replace(/[^0-9]/g, ''));
 
   return (
@@ -90,28 +94,29 @@ function FoodKitDetail() {
         <div className="detail-content">
           <div className="detail-image">
             <img src={product.image} alt={product.name} />
-            {product.slug === 'ayam-taliwang-dapo' && <span className="detail-badge">Best Seller</span>}
+            <span className="detail-badge">Best Seller</span>
             <span className="detail-rating">★ {product.rating}</span>
           </div>
 
           <article className="detail-info">
             <h1>{product.name}</h1>
             <p className="detail-description">
-              Sajian khas Indonesia yang disuguhkan dengan potongan Ayam Kampung yang lembut dan bumbu khas DAPO.
+              {product.name === 'Rendang DAPO'
+                ? 'Sajian Indonesia dengan daging sapi lembut dan bumbu rendang khas DAPO.'
+                : 'Sajian khas Indonesia yang disuguhkan dengan potongan Ayam Kampung yang lembut dan bumbu khas DAPO.'}
             </p>
 
             <div className="detail-specs">
               <div><span>♙</span><div><small>Porsi</small><strong>3-4 Orang</strong></div></div>
-              <div><span>◷</span><div><small>Waktu Masak</small><strong>25 Menit</strong></div></div>
+              <div><span>◷</span><div><small>Waktu Masak</small><strong>{product.name === 'Rendang DAPO' ? '35 Menit' : '25 Menit'}</strong></div></div>
               <div><span>▥</span><div><small>Tingkat Kesulitan</small><strong>Sedang</strong></div></div>
             </div>
 
             <h2>Deskripsi Produk</h2>
             <p className="detail-copy">
-              Nikmati perpaduan memasak rendang bumbu 3 di rumah Anda.
-              Food Kit ini mencakup semua bahan segar yang telah dipilih untuk ayam
-              kampung 3-4 orang, lengkap dengan takaran dan bumbu Taliwang hingga
-              membuat makanan spesial dan sempurna.
+              {product.name === 'Rendang DAPO'
+                ? 'Nikmati rendang sapi autentik buatan rumah dengan mudah. Food Kit ini mencakup semua bahan segar yang telah dipilih untuk 3-4 porsi, lengkap dengan bumbu rendang dan takaran yang pas.'
+                : 'Nikmati perpaduan memasak rendang bumbu 3 di rumah Anda. Food Kit ini mencakup semua bahan segar yang telah dipilih untuk ayam kampung 3-4 orang, lengkap dengan takaran dan bumbu Taliwang hingga membuat makanan spesial dan sempurna.'}
             </p>
 
             <h2 className="detail-steps-title">Langkah Memasak</h2>
@@ -133,7 +138,7 @@ function FoodKitDetail() {
             <label className="detail-quantity">
               <span>Jumlah Pesanan</span>
               <div>
-                <button type="button" onClick={() => setQuantity((value) => Math.max(1, value - 1))}>−</button>
+                <button type="button" onClick={() => setQuantity((value) => Math.max(0, value - 1))}>−</button>
                 <strong>{quantity}</strong>
                 <button type="button" onClick={() => setQuantity((value) => value + 1)}>+</button>
               </div>
