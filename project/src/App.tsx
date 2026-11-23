@@ -10,6 +10,7 @@ import FoodKits from './pages/food-kits';
 import PracticalMenu from './pages/practical-menu';
 import HealthyMenu from './pages/healthy-menu';
 import FamilyMenu from './pages/family-menu';
+import StudentMenu from './pages/student-menu';
 
 function App() {
   const route = window.location.pathname.replace(/\/+$/, '');
@@ -56,6 +57,10 @@ function App() {
 
   if (route === '/family-menu') {
     return <FamilyMenu />;
+  }
+
+  if (route === '/student-menu') {
+    return <StudentMenu />;
   }
 
   return <Login />;
