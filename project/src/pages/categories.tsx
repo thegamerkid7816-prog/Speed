@@ -76,7 +76,13 @@ function Categories() {
               <div className="category-card__body">
                 <h2>{category.title}</h2>
                 <p>{category.description}</p>
-                <a href={category.title === 'Menu Praktis' ? '/practical-menu' : '/food-kits'}>Lihat Menu</a>
+                <a href={
+                  category.title === 'Menu Praktis'
+                    ? '/practical-menu'
+                    : category.title === 'Menu Sehat'
+                      ? '/healthy-menu'
+                      : '/food-kits'
+                }>Lihat Menu</a>
               </div>
             </article>
           ))}
