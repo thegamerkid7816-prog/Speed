@@ -162,7 +162,7 @@ function Dashboard({ isLoggedIn = false }: DashboardProps) {
             <li>Priority delivery &amp; early access to seasonal menu</li>
             <li>Free signature spice blends in every box</li>
           </ul>
-          <a href="#membership">Join Membership Now</a>
+          <a href="/membership">Join Membership Now</a>
         </div>
         <div className="dashboard-membership__images">
           <img src={asset11} alt="Paket makanan DAPO" />
