@@ -88,7 +88,7 @@ function FoodKits() {
                 </div>
                 <div className="foodkit-card__footer">
                   <strong>{product.price}</strong>
-                  <a href="#detail">Lihat Detail</a>
+                  <a href={`/food-kit-detail/${product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}>Lihat Detail</a>
                 </div>
               </div>
             </article>

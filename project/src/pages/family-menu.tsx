@@ -85,7 +85,7 @@ function FamilyMenu() {
                   <strong>{item.price}</strong>
                 </div>
                 <p>{item.description}</p>
-                <a href="#detail">Lihat Detail</a>
+                <a href={`/food-kit-detail/${item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}>Lihat Detail</a>
               </div>
             </article>
           ))}
