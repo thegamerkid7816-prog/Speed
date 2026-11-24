@@ -1,0 +1,284 @@
+.practical-page {
+  min-width: 320px;
+  overflow: hidden;
+  background: #fff6e7;
+  color: #001712;
+  font-family: "Plus Jakarta Sans", "Arial", sans-serif;
+}
+
+.practical-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  height: 124px;
+  align-items: center;
+  padding: 0 2.92vw;
+  border: 1px solid #a9a9a9;
+  border-radius: 0 0 15px 15px;
+  background: #fafafa;
+}
+
+.practical-brand,
+.practical-nav,
+.practical-actions { display: flex; align-items: center; }
+.practical-brand { gap: 8px; color: #000; text-decoration: none; }
+.practical-brand__mark { position: relative; width: 106px; height: 106px; }
+.practical-brand__box, .practical-brand__hat { position: absolute; object-fit: contain; }
+.practical-brand__box { inset: 0; width: 100%; height: 100%; }
+.practical-brand__hat { top: 35%; left: 30%; width: 40%; height: 40%; }
+.practical-brand__name { font-family: Georgia, "Times New Roman", serif; font-size: 48px; font-style: italic; font-weight: 700; line-height: 1; }
+.practical-nav { gap: 42px; margin-left: auto; }
+.practical-nav a { color: #000; font-size: 32px; font-weight: 500; text-decoration: none; white-space: nowrap; }
+.practical-nav__active { color: #2b8831; text-decoration: underline; text-underline-offset: 8px; }
+.practical-actions { height: 98px; gap: 28px; margin-left: 48px; }
+.practical-basket { display: grid; width: 48px; height: 56px; place-items: center; }
+.practical-basket img { width: 48px; height: 56px; object-fit: contain; }
+.practical-avatar { width: 106px; height: 98px; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; overflow: hidden; }
+.practical-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.practical-main {
+  min-height: 700px;
+  padding: 54px 85px 70px;
+  background: #fff6e7;
+}
+
+.practical-heading {
+  display: flex;
+  max-width: 1270px;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 0 auto 40px;
+}
+
+.practical-back {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #0f5238;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.practical-heading h1 {
+  margin: 0;
+  color: #001712;
+  font-size: 34px;
+  line-height: 40px;
+}
+
+.practical-heading p {
+  margin: 8px 0 0;
+  color: #414846;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.practical-grid {
+  display: grid;
+  max-width: 1270px;
+  grid-template-columns: repeat(2, 600px);
+  gap: 40px;
+  margin: 0 auto;
+}
+
+.practical-card {
+  height: 350px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 20px 40px -10px rgba(0, 23, 18, 0.06);
+}
+
+.practical-card__image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.practical-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.practical-card__image span {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #001712;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.practical-card__image button {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #ff6b00;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.practical-card__body {
+  height: 130px;
+  padding: 14px 20px;
+  font-family: Inter, "Arial", sans-serif;
+}
+
+.practical-card__rating {
+  display: flex;
+  height: 24px;
+  align-items: center;
+  gap: 6px;
+  color: #414846;
+  font-size: 12px;
+}
+
+.practical-card__rating > span:first-child {
+  color: #f59e0b;
+  font-size: 16px;
+}
+
+.practical-card__rating strong {
+  color: #1a1c1c;
+  font-size: 14px;
+}
+
+.practical-card__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.practical-card__title h2,
+.practical-card__title strong {
+  margin: 0;
+  color: #001712;
+  font-family: "Plus Jakarta Sans", "Arial", sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.practical-card__body p {
+  width: 400px;
+  margin: 8px 0 0;
+  overflow: hidden;
+  color: #414846;
+  font-size: 14px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.practical-card__body > a {
+  display: block;
+  margin-top: 10px;
+  color: #001712;
+  font-size: 14px;
+  text-align: right;
+  text-decoration: underline;
+}
+
+.practical-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 52px;
+}
+
+.practical-pagination button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #727975;
+  border-radius: 8px;
+  background: #fff;
+  color: #727975;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.practical-pagination button.is-current {
+  border-color: #001712;
+  background: #001712;
+  color: #fff;
+  font-size: 16px;
+}
+
+.practical-footer {
+  min-height: 515px;
+  padding: 80px max(40px, calc((100% - 1200px) / 2));
+  background: #e1e3df;
+  font-family: "Plus Jakarta Sans", "Arial", sans-serif;
+}
+
+.practical-footer__grid {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  gap: 48px;
+}
+
+.practical-footer__grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.practical-footer h2, .practical-footer h3 { margin: 0 0 12px; color: #191c1a; }
+.practical-footer h2 { color: #0f5238; font-size: 24px; }
+.practical-footer h3 { font-size: 14px; }
+.practical-footer p, .practical-footer a { margin: 0; color: #404943; font-size: 16px; line-height: 24px; text-decoration: none; }
+.practical-footer form { display: flex; width: 100%; gap: 8px; }
+.practical-footer input { min-width: 0; height: 48px; flex: 1; padding: 0 13px; border: 1px solid #bfc9c1; border-radius: 8px; background: #f8faf6; }
+.practical-footer form button { width: 50px; height: 48px; border: 0; border-radius: 8px; background: #0f5238; color: #fff; cursor: pointer; }
+.practical-footer__bottom { display: flex; margin-top: 70px; align-items: center; justify-content: space-between; border-top: 1px solid #bfc9c1; padding-top: 49px; }
+.practical-footer__bottom div { display: flex; gap: 48px; }
+
+@media (max-width: 1100px) {
+  .practical-header { height: 88px; }
+  .practical-brand__mark { width: 72px; height: 72px; }
+  .practical-brand__name { font-size: 34px; }
+  .practical-nav { gap: 18px; }
+  .practical-nav a { font-size: 16px; }
+  .practical-actions { gap: 12px; margin-left: 24px; }
+  .practical-basket { display: none; }
+  .practical-avatar { width: 72px; height: 72px; }
+  .practical-main { padding: 40px 32px 60px; }
+  .practical-grid { grid-template-columns: repeat(2, 1fr); }
+  .practical-card { width: 100%; }
+}
+
+@media (max-width: 700px) {
+  .practical-header { height: 76px; padding: 0 16px; }
+  .practical-brand__mark { width: 58px; height: 58px; }
+  .practical-brand__name { font-size: 28px; }
+  .practical-nav { display: none; }
+  .practical-actions { height: 58px; margin-left: auto; }
+  .practical-basket { display: grid; width: 38px; height: 44px; }
+  .practical-basket img { width: 38px; height: 44px; }
+  .practical-avatar { width: 58px; height: 58px; }
+  .practical-main { padding: 40px 20px 50px; }
+  .practical-grid { grid-template-columns: 1fr; }
+  .practical-card { height: 350px; }
+  .practical-card__body p { width: 100%; }
+  .practical-pagination { margin-top: 40px; }
+  .practical-footer { min-height: 0; padding: 54px 20px 30px; }
+  .practical-footer__grid { grid-template-columns: 1fr; gap: 36px; }
+  .practical-footer__bottom { flex-direction: column; align-items: flex-start; gap: 20px; margin-top: 40px; padding-top: 30px; }
+  .practical-footer__bottom div { flex-wrap: wrap; gap: 20px; }
+}
