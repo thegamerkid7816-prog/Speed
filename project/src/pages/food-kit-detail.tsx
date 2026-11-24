@@ -55,12 +55,42 @@ const ingredients = [
   { name: 'Kelapa Sangrai', amount: '100g' },
 ];
 
+const katsuCookingSteps = [
+  {
+    title: 'Siapkan Bumbu & Ayam',
+    text: 'Cuci bersih ayam kampung, lumuri dengan jus lemon, diamkan selama 10 menit, dan bilas kembali sebelum dimasak.',
+  },
+  {
+    title: 'Tumis Bumbu Base Genep',
+    text: 'Panaskan minyak kelapa, tumiskan Bumbu Base Genep DAPO hingga harum. Masukkan daun jeruk dan serai.',
+  },
+  {
+    title: 'Masak Ayam',
+    text: 'Masukkan ayam ke dalam wajan, aduk sampai tercelup oleh bumbu, lalu masak dengan api sedang selama 20 menit.',
+  },
+  {
+    title: 'Proses Mengkus',
+    text: 'Bungkus ayam setelah bumbu meresap dan gunakan 45 menit untuk proses mengkus hingga ayam matang sempurna.',
+  },
+];
+
+const katsuIngredients = [
+  { name: '1 ekor Ayam Kampung', amount: '800g' },
+  { name: 'Bumbu Base Genep DAPO', amount: '1 Pak' },
+  { name: 'Daun Jeruk', amount: '3 Lbr' },
+  { name: 'Serai', amount: '2 Batang' },
+  { name: 'Minyak Kelapa', amount: '3 Sdt' },
+];
+
 function FoodKitDetail() {
   const [quantity, setQuantity] = useState(0);
   const pathParts = window.location.pathname.split('/').filter(Boolean);
   const slug = pathParts[pathParts.length - 1];
   const product = productCatalog.find((item) => item.slug === slug) ?? productCatalog[0];
   const unitPrice = Number(product.price.replace(/[^0-9]/g, ''));
+  const isKatsu = product.slug === 'ayam-katsu-kari';
+  const activeCookingSteps = isKatsu ? katsuCookingSteps : cookingSteps;
+  const activeIngredients = isKatsu ? katsuIngredients : ingredients;
 
   return (
     <main className="detail-page">
@@ -101,27 +131,31 @@ function FoodKitDetail() {
           <article className="detail-info">
             <h1>{product.name}</h1>
             <p className="detail-description">
-              {product.name === 'Rendang DAPO'
-                ? 'Sajian Indonesia dengan daging sapi lembut dan bumbu rendang khas DAPO.'
-                : 'Sajian khas Indonesia yang disuguhkan dengan potongan Ayam Kampung yang lembut dan bumbu khas DAPO.'}
+              {isKatsu
+                ? 'Sajian khas Indonesia yang disuguhkan dengan ayam kampung lembut dan bumbu kari khas DAPO.'
+                : product.name === 'Rendang DAPO'
+                  ? 'Sajian Indonesia dengan daging sapi lembut dan bumbu rendang khas DAPO.'
+                  : 'Sajian khas Indonesia yang disuguhkan dengan potongan Ayam Kampung yang lembut dan bumbu khas DAPO.'}
             </p>
 
             <div className="detail-specs">
-              <div><span>♙</span><div><small>Porsi</small><strong>3-4 Orang</strong></div></div>
-              <div><span>◷</span><div><small>Waktu Masak</small><strong>{product.name === 'Rendang DAPO' ? '35 Menit' : '25 Menit'}</strong></div></div>
+              <div><span>♙</span><div><small>Porsi</small><strong>{isKatsu ? '2-3 Orang' : '3-4 Orang'}</strong></div></div>
+              <div><span>◷</span><div><small>Waktu Masak</small><strong>{isKatsu ? '35 Menit' : product.name === 'Rendang DAPO' ? '35 Menit' : '25 Menit'}</strong></div></div>
               <div><span>▥</span><div><small>Tingkat Kesulitan</small><strong>Sedang</strong></div></div>
             </div>
 
             <h2>Deskripsi Produk</h2>
             <p className="detail-copy">
-              {product.name === 'Rendang DAPO'
-                ? 'Nikmati rendang sapi autentik buatan rumah dengan mudah. Food Kit ini mencakup semua bahan segar yang telah dipilih untuk 3-4 porsi, lengkap dengan bumbu rendang dan takaran yang pas.'
-                : 'Nikmati perpaduan memasak rendang bumbu 3 di rumah Anda. Food Kit ini mencakup semua bahan segar yang telah dipilih untuk ayam kampung 3-4 orang, lengkap dengan takaran dan bumbu Taliwang hingga membuat makanan spesial dan sempurna.'}
+              {isKatsu
+                ? 'Nikmati Ayam Katsu Kari dengan rasa gurih dan aromatik khas Bali. Food Kit ini berisi bahan segar pilihan, bumbu genep DAPO, serta takaran yang pas untuk hasil masakan sempurna.'
+                : product.name === 'Rendang DAPO'
+                  ? 'Nikmati rendang sapi autentik buatan rumah dengan mudah. Food Kit ini mencakup semua bahan segar yang telah dipilih untuk 3-4 porsi, lengkap dengan bumbu rendang dan takaran yang pas.'
+                  : 'Nikmati perpaduan memasak rendang bumbu 3 di rumah Anda. Food Kit ini mencakup semua bahan segar yang telah dipilih untuk ayam kampung 3-4 orang, lengkap dengan takaran dan bumbu Taliwang hingga membuat makanan spesial dan sempurna.'}
             </p>
 
             <h2 className="detail-steps-title">Langkah Memasak</h2>
             <div className="detail-steps">
-              {cookingSteps.map((step, index) => (
+              {activeCookingSteps.map((step, index) => (
                 <article key={step.title}>
                   <span>{index + 1}</span>
                   <div><h3>{step.title}</h3><p>{step.text}</p></div>
@@ -157,16 +191,20 @@ function FoodKitDetail() {
 
             <h2>Daftar Bahan</h2>
             <div className="detail-ingredients">
-              {ingredients.map((ingredient) => (
+              {activeIngredients.map((ingredient) => (
                 <div key={ingredient.name}><span>{ingredient.name}</span><strong>{ingredient.amount}</strong></div>
               ))}
             </div>
 
-            <h2 className="detail-compatibility-title">Tidak Termasuk dalam Pengiriman</h2>
-            <div className="detail-compatibility">
-              <div><span>Garam</span><span>Gula Pasir</span><span>Minyak Goreng</span></div>
-              <div><strong>Kaldu bubuk (opsional)</strong><strong>Air</strong></div>
-            </div>
+            {!isKatsu && (
+              <>
+                <h2 className="detail-compatibility-title">Tidak Termasuk dalam Pengiriman</h2>
+                <div className="detail-compatibility">
+                  <div><span>Garam</span><span>Gula Pasir</span><span>Minyak Goreng</span></div>
+                  <div><strong>Kaldu bubuk (opsional)</strong><strong>Air</strong></div>
+                </div>
+              </>
+            )}
 
             <h2 className="detail-tools-title">Peralatan</h2>
             <div className="detail-tools">
