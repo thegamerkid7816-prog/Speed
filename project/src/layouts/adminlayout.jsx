@@ -1,7 +1,7 @@
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
-function adminlayout() {
+function AdminLayout() {
     const navigate = useNavigate();
     const [showSidebar, setShowSidebar] = useState(true);
 
@@ -82,4 +82,4 @@ function adminlayout() {
   ); 
 } 
  
-export default adminlayout;
+export default AdminLayout;

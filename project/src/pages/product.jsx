@@ -1,4 +1,4 @@
-function product() { 
+function Product() { 
   return ( 
  
     <div className="card p-4 shadow"> 
@@ -48,4 +48,4 @@ function product() {
 ); 
 } 
 
-export default product; 
+export default Product;

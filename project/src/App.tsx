@@ -1,28 +1,28 @@
-import { BrowerRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import login from './pages/login';
-import adminlayout from './layouts/adminlayout';
-import dashboard from './pages/dashboard';
-import product from './pages/product';
-import category from './pages/category';
+import Login  from './pages/Login';
+import AdminLayout from './layouts/AdminLayout';
+import Dashboard from './pages/Dashboard';
+import Product from './pages/Product';
+import Category from './pages/Category';
 
 import './App.css'
 
 function App() {
   return (
-    <BrowerRouter>
+    <BrowserRouter>
       <Routes>
         <Route>
-          <Route path='/' element={<login />} />
-          <Route path='/admin' element={<adminlayout />}>
-            <Route index element={<dashboard />} />
-            <Route path='product' element={<product />} />
-            <Route path='category' element={<category />} />
+          <Route path='/' element={<Login />} />
+          <Route path='/admin' element={<AdminLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path='product' element={<Product />} />
+            <Route path='category' element={<Category />} />
           </Route>
         </Route>
       </Routes>
           
-    </BrowerRouter>
+    </BrowserRouter>
   )
 }
 

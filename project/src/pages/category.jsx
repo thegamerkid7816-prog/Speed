@@ -1,4 +1,4 @@
-function category() { 
+function Category() { 
   return ( 
      
     <div className="card p-4 shadow"> 
@@ -49,4 +49,4 @@ function category() {
   ); 
 } 
  
-export default category;
+export default Category;
